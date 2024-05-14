@@ -6,17 +6,17 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class CardsService {
-  constructor(
-    @InjectRepository(Card)
-    private cardsRepository: Repository<Card>,
-  ) {}
+    constructor(
+        @InjectRepository(Card)
+        private cardsRepository: Repository<Card>,
+    ) {}
 
-  async create(createCardDto: CreateCardDto): Promise<Card> {
-    const newCard = this.cardsRepository.create(createCardDto);
-    return this.cardsRepository.save(newCard);
-  }
+    async create(createCardDto: CreateCardDto): Promise<Card> {
+        const newCard = this.cardsRepository.create(createCardDto);
+        return this.cardsRepository.save(newCard);
+    }
 
-  findAll() {
-    return this.cardsRepository.find();
-  }
+    findAll() {
+        return this.cardsRepository.find();
+    }
 }
