@@ -13,11 +13,12 @@ export class DriverApplicationService {
 
     async create(
         createDriverApplicationDto: CreateDriverApplicationDto,
-    ): Promise<DriverApplication> {
+    ): Promise<string> {
         const newApplication = this.driverApplicationsRepository.create(
             createDriverApplicationDto,
         );
-        return this.driverApplicationsRepository.save(newApplication);
+        await this.driverApplicationsRepository.save(newApplication);
+        return `Welcome, ${newApplication.firstName}`;
     }
 
     findAll() {
