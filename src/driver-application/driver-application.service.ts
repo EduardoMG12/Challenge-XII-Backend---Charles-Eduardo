@@ -1,26 +1,26 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { DriverApplication } from './entities/driver-application.entity';
 import { CreateDriverApplicationDto } from './dto/create-driver-application.dto';
-import { UpdateDriverApplicationDto } from './dto/update-driver-application.dto';
 
 @Injectable()
 export class DriverApplicationService {
-  create(createDriverApplicationDto: CreateDriverApplicationDto) {
-    return 'This action adds a new driverApplication';
-  }
+    constructor(
+        @InjectRepository(DriverApplication)
+        private driverApplicationsRepository: Repository<DriverApplication>,
+    ) {}
 
-  findAll() {
-    return `This action returns all driverApplication`;
-  }
+    async create(
+        createDriverApplicationDto: CreateDriverApplicationDto,
+    ): Promise<DriverApplication> {
+        const newApplication = this.driverApplicationsRepository.create(
+            createDriverApplicationDto,
+        );
+        return this.driverApplicationsRepository.save(newApplication);
+    }
 
-  findOne(id: number) {
-    return `This action returns a #${id} driverApplication`;
-  }
-
-  update(id: number, updateDriverApplicationDto: UpdateDriverApplicationDto) {
-    return `This action updates a #${id} driverApplication`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} driverApplication`;
-  }
+    findAll() {
+        return this.driverApplicationsRepository.find();
+    }
 }
