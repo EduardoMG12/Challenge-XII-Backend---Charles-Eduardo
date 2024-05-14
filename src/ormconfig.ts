@@ -1,13 +1,14 @@
-// edit for some database i don't know what i use and after run application and how can i running database
-import { DataSourceOptions } from 'typeorm';
+import { TypeOrmModuleAsyncOptions } from '@nestjs/typeorm';
 
-export const config: DataSourceOptions = {
-  type: 'mysql',
-  host: 'localhost',
-  port: 3306,
-  username: 'seu_usuario',
-  password: 'sua_senha',
-  database: 'nome_do_banco_de_dados',
-  synchronize: true,
-  entities: [__dirname + '/**/*.entity{.ts,.js}'],
+export const configAsync: TypeOrmModuleAsyncOptions = {
+  useFactory: () => ({
+    type: 'mysql',
+    host: process.env.DB_HOST,
+    port: 3306,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    synchronize: true,
+    entities: [__dirname + '/**/*.entity{.ts,.js}'],
+  }),
 };
