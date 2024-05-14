@@ -5,11 +5,14 @@ import { AppService } from './app.service';
 import { configAsync } from './ormconfig';
 import { CardsModule } from './cards/cards.module';
 import { ConfigModule } from '@nestjs/config';
+import { DriverApplicationModule } from './driver-application/driver-application.module';
+
 @Module({
   imports: [
-    CardsModule,
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync(configAsync),
+    CardsModule,
+    DriverApplicationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
