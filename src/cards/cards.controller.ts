@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete } from '@nestjs/common';
 import { CardsService } from './cards.service';
 import { CreateCardDto } from './dto/create-card.dto';
 
@@ -14,5 +14,10 @@ export class CardsController {
     @Get()
     findAll() {
         return this.cardsService.findAll();
+    }
+
+    @Delete('delete')
+    async deleteAll() {
+        await this.cardsService.deleteAll();
     }
 }

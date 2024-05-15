@@ -96,10 +96,12 @@ O projeto não possui muitas rotas o mesmo possui:
 @POST('/cards') rota que cria um card
 ```json 
 {
-    "imgUrl": "http://exemplo.com/imagem.jpg",
-    "title": "Título do Card",
-    "paragraph": "Parágrafo do Card"
-}
+    "imgUrl":"http://exemplo.com/imagem.jpg",
+    "altImg":"alt da imagem para ajudar na acessibilidade",
+    "title":"Título do Card",
+    "paragraph":"Parágrafo do Card",
+    "cardLinkLearnMore": "https://wwww.redirectLinkLearnMore.com"
+    }
 
 ```
 ```sh

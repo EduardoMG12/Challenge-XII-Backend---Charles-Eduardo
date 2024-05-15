@@ -19,4 +19,8 @@ export class CardsService {
     findAll() {
         return this.cardsRepository.find();
     }
+
+    async deleteAll(): Promise<void> {
+        await this.cardsRepository.clear();
+    }
 }

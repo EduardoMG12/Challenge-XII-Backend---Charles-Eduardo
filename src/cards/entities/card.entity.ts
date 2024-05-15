@@ -9,8 +9,14 @@ export class Card {
     imgUrl: string;
 
     @Column()
+    altImg: string;
+
+    @Column()
     title: string;
 
     @Column()
     paragraph: string;
+
+    @Column()
+    cardLinkLearnMore: string;
 }
