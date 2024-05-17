@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete } from '@nestjs/common';
 import { DriverApplicationService } from './driver-application.service';
 import { CreateDriverApplicationDto } from './dto/create-driver-application.dto';
 
@@ -16,5 +16,10 @@ export class DriverApplicationController {
     @Get()
     findAll() {
         return this.driverApplicationService.findAll();
+    }
+
+    @Delete('delete')
+    async deleteAll() {
+        await this.driverApplicationService.deleteAll();
     }
 }

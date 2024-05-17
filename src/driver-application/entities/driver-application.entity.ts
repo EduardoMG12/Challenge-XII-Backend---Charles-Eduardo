@@ -15,7 +15,7 @@ export class DriverApplication {
     email: string;
 
     @Column()
-    county: string;
+    country: string;
 
     @Column()
     city: string;

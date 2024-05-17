@@ -20,7 +20,7 @@ export class CreateDriverApplicationDto {
 
     @IsString()
     @IsNotEmpty()
-    county: string;
+    country: string;
 
     @IsString()
     @IsNotEmpty()
@@ -32,6 +32,6 @@ export class CreateDriverApplicationDto {
     @IsBoolean()
     ownCar: boolean;
 
-    @IsIn(['van/suv', 'sedan', 'semi luxury', 'luxury'])
+    @IsIn(['suv/van', 'sedan', 'semi luxury', 'luxury'])
     carType: string;
 }

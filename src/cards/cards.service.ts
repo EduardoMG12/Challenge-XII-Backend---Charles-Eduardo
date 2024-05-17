@@ -20,7 +20,7 @@ export class CardsService {
         return this.cardsRepository.find();
     }
 
-    async deleteAll(): Promise<void> {
+    async deleteAll() {
         await this.cardsRepository.clear();
     }
 }

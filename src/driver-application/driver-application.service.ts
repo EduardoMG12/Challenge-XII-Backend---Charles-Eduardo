@@ -24,4 +24,8 @@ export class DriverApplicationService {
     findAll() {
         return this.driverApplicationsRepository.find();
     }
+
+    async deleteAll() {
+        await this.driverApplicationsRepository.clear();
+    }
 }
