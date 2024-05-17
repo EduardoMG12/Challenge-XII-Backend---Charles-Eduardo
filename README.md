@@ -9,10 +9,10 @@ Este é o repositório do projeto "12º Desafio | AWS_FULLSTACK_FEV24" desenvolv
 ## Como instalar as dependências:
 
 ```sh
-git clone https://github.com/EduardoMG12/Challenge2_CompassCine.git
-git clone git@github.com:EduardoMG12/Challenge2_CompassCine.git # caso estiver usando token ssh use este comando
-cd Challenge2_CompassCine
-npm install
+git clone https://github.com/EduardoMG12/Challenge-XII-Backend---Charles-Eduardo
+git clone git@github.com:EduardoMG12/Challenge-XII-Backend---Charles-Eduardo.git # caso estiver usando token ssh use este comando
+cd Challenge-XII-Backend---Charles-Eduardo
+bun install
 
 ```
 
@@ -28,17 +28,7 @@ DB_NAME=backendCompass
 
 ## Como rodar o projeto
 ```sh
-# certifique-se que vocë esta na pasta do projeto
-docker-compose -f ./docker-compose.mongoConfig.yml up --build -d
-npm run dev
-```
-
-<!-- docker compose up --build -d # roda todos os containers(banco de dados e back-end) 
-docker compose up --build -d mongodb # roda apenas o container banco de dados 
-docker compose up --build -d  application # roda apenas o container com o back-end -->
-## Como derrubar todos os containers
-```sh
-docker kill $(docker ps -q)
+bun run start:dev # certifique-se que vocë esta na pasta do projeto
 ```
 </details>
 
