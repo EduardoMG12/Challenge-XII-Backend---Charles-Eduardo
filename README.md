@@ -19,10 +19,10 @@ bun install
 ## environments
 
 ```ts
-DB_HOST=compassdbchallenge.c70yw2480omh.us-east-1.rds.amazonaws.com
+DB_HOST=localhost
 DB_PORT=3306
-DB_USERNAME=admin
-DB_PASSWORD=Jx10QhEnksGzqT74z8zn
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
 DB_NAME=backendCompass
 ```
 
